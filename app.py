@@ -11,6 +11,12 @@ try:
     df = pd.read_csv(csv_path)
     df['order_date'] = pd.to_datetime(df['order_date'])
 
+    # 🔍 Diagnostique des données
+st.write("🔍 Colonnes du DataFrame :", df.columns.tolist())
+st.write("🔍 Quelques lignes :", df.head())
+st.write("🔍 Types de colonnes :", df.dtypes)
+
+
     # Afficher les données
     st.subheader("🗂️ Données brutes")
     st.dataframe(df)
